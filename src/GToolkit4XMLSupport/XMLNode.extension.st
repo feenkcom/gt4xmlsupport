@@ -5,6 +5,7 @@ XMLNode >> gtSourceIn: aView [
 	<gtView>
 	^ aView textEditor
 		title: 'Source';
+		look: BrGlamorousCodeEditorLook new;
 		priority: 20;
 		text: [
 			String new: 10000 streamContents: [:stream |
@@ -22,8 +23,8 @@ XMLNode >> gtTreeIn: aView [
 			title: 'Tree';
 			priority: 10;
 			items: [ {self} ];
-			children: [:each | each treeViewChildren]";
-			itemFormat: [:each | each treeViewLabelText]"
+			children: [:each | each treeViewChildren];
+			itemFormat: [:each | each gtDisplayString]
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
@@ -32,6 +33,7 @@ XMLNode >> gtXPathFor: aView [
 	self supportsXPathEvaluator ifFalse: [^ aView empty].
 	^ aView textEditor
 		title: 'XPath';
+		look: BrGlamorousEditorLook new;
 		text: ['self::node()'];
 		actionButtonIcon: BrGlamorousIcons playinspect  
 			action: [ :aButton | 
