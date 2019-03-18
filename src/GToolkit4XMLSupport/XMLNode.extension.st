@@ -5,6 +5,7 @@ XMLNode >> gtSourceIn: aView [
 	<gtView>
 	^ aView textEditor
 		title: 'Source';
+		styler: Gt4XMLStyler new;
 		look: BrGlamorousCodeEditorLook new;
 		priority: 20;
 		text: [
