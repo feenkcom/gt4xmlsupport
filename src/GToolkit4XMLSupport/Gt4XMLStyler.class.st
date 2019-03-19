@@ -115,9 +115,9 @@ Gt4XMLStyler >> endXMLDeclarationHighlightPosition: aPosition [
 { #category : #initialization }
 Gt4XMLStyler >> initialize [
 	super initialize.
-	highlights := OrderedCollection new.
+	self initializeHighlights.
 	xmlDeclarationColor := Color green muchDarker.
-	doctypeDeclarationColor  := Color black.
+	doctypeDeclarationColor := Color black.
 	declarationColor := Color black.
 	piColor := Color black.
 	tagColor := Color blue darker.
@@ -126,27 +126,38 @@ Gt4XMLStyler >> initialize [
 	quotedStringColor := Color magenta muchDarker.
 	entityReferenceColor := Color black.
 	cdataColor := Color black.
-	commentColor := Color gray.
+	commentColor := Color gray
+]
+
+{ #category : #initialization }
+Gt4XMLStyler >> initializeHighlights [
+	highlights := OrderedCollection new
 ]
 
 { #category : #styling }
 Gt4XMLStyler >> newHighlightColor: aColor position: aPosition [
-	^ aColor
-		ifNotNil: [
-			highlights addLast:
-				(XMLHighlight new
-					color: aColor;
-					start: aPosition)]
+	^ aColor ifNotNil: [
+		highlights addLast:
+			(XMLHighlight new
+				color: aColor;
+				start: aPosition)]
 ]
 
 { #category : #styling }
 Gt4XMLStyler >> privateStyle: aText [
-	(Gt4XMLHighlightingParser on: aText asString)
+	| highlightingParser string |
+	string := aText asString.
+	self initializeHighlights.
+	highlightingParser := (Gt4XMLHighlightingParser on: string)
 		highlighter: self;
-		parseDocument.
+		parser.
+	[highlightingParser parseDocument] on: XMLParserException do: [:exception | 
+		(self newHighlightColor: Color red position: highlightingParser currentPosition)
+			end: string size].
 	highlights do: [ :aHighlight |
-		(aText from: aHighlight start to: aHighlight end)
-			attribute: (BlTextForegroundAttribute new paint: aHighlight color) ].
+		aHighlight end ifNotNil: [
+			(aText from: aHighlight start to: aHighlight end)
+				attribute: (BlTextForegroundAttribute new paint: aHighlight color) ] ].
 	^ aText
 ]
 
