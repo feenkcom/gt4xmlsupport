@@ -10,16 +10,7 @@ BaselineOfGToolkit4XMLSupport >> baseline: spec [
 	spec
 		for: #common
 		do: [
-			spec 
-				project: 'XMLParser' with: [ 
-				spec
-					className: 'ConfigurationOfXMLParser';	
-					versionString: #'development';
-					repository: 'http://www.smalltalkhub.com/mc/PharoExtras/XMLParser/main'];
-			project: 'XPath' with: [
-				spec
-					className: #ConfigurationOfXPath;
-					versionString: #development;
-					repository: 'http://www.smalltalkhub.com/mc/PharoExtras/XPath/main' ];
-				package: 'GToolkit4XMLSupport' with: [ spec requires: #(XMLParser) ] ]
+			spec baseline: 'XMLParser' with: [ spec repository: 'github://feenkcom/XMLParser/src' ].
+			spec baseline: 'XPath' with: [ spec repository: 'github://feenkcom/XPath/src' ].
+			spec package: 'GToolkit4XMLSupport' with: [ spec requires: #(XMLParser) ] ]
 ]
