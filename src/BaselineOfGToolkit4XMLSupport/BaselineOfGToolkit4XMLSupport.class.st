@@ -11,7 +11,7 @@ BaselineOfGToolkit4XMLSupport >> baseline: spec [
 		for: #common do: [
 			spec
 				baseline: 'XMLParser' with: [
-					spec repository: 'github://feenkcom/XMLParser/src' ];
+					spec repository: 'github://feenkcom/XMLParser:v0.6.1/src' ];
 				baseline: 'XPath' with: [
-					spec repository: 'github://feenkcom/XPath/src' ]]
+					spec repository: 'github://feenkcom/XPath:v0.6.1/src' ]]
 ]
