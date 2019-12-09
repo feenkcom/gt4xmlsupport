@@ -8,7 +8,7 @@ Class {
 		'isInEntityReference',
 		'isInAttlistDeclaration'
 	],
-	#category : #'XML-ParserGTExtensions-Highlighting-Parser'
+	#category : #GToolkit4XMLSupport
 }
 
 { #category : #'tokenizing - dtd' }

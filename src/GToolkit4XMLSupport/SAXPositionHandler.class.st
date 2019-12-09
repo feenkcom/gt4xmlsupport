@@ -4,7 +4,7 @@ This class is a SAXHandler that can track the positions of tokens. Does not supp
 Class {
 	#name : #SAXPositionHandler,
 	#superclass : #SAXHandler,
-	#category : #'XML-ParserGTExtensions-Highlighting-Parser'
+	#category : #GToolkit4XMLSupport
 }
 
 { #category : #defaults }
