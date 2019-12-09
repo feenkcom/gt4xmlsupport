@@ -1,1 +1,1 @@
-{	"repositories" : {		"github://feenkcom/XMLParser/src" : "v0.6.1",		"github://feenkcom/XPath/src" : "v0.6.1"	}}
+{	"repositories" : {		"github://feenkcom/XMLWriter/src" : "v0.6.0",		"github://feenkcom/XPath/src" : "v0.6.1"	}}
