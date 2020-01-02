@@ -68,11 +68,6 @@ XMLNode class >> gtExampleNodeWithParent [
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
-XMLNode >> newSourceEditorTextStylerDecorator [
-	^ GLMXMLOuterXMLDocumentHighlighterTextStylerDecorator outerXMLNode: self
-]
-
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> promptForSourceSaveFileName [
 	^ (UITheme builder
 		fileSave: 'Save XML source to file'

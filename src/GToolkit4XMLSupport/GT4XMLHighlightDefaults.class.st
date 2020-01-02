@@ -2,7 +2,7 @@
 This is a base class for storing the default highlight TextColors used by a highlighter. It gets the initial defaults from Shout text styling.
 "
 Class {
-	#name : #GT4XMLHighlightDefaults,
+	#name : #Gt4XMLHighlightDefaults,
 	#superclass : #Object,
 	#classInstVars : [
 		'defaultDefaultColor',
@@ -12,25 +12,25 @@ Class {
 }
 
 { #category : #accessing }
-GT4XMLHighlightDefaults class >> defaultDefaultColor [
+Gt4XMLHighlightDefaults class >> defaultDefaultColor [
 	^ defaultDefaultColor
 		ifNil: [defaultDefaultColor := self textColorForShoutProperty: #default]
 ]
 
 { #category : #accessing }
-GT4XMLHighlightDefaults class >> defaultDefaultColor: aTextColor [
+Gt4XMLHighlightDefaults class >> defaultDefaultColor: aTextColor [
 	defaultDefaultColor := aTextColor
 ]
 
 { #category : #'class initialization' }
-GT4XMLHighlightDefaults class >> initialize [
+Gt4XMLHighlightDefaults class >> initialize [
 	"self initialize"
 
 	self resetDefaults
 ]
 
 { #category : #'instance creation' }
-GT4XMLHighlightDefaults class >> new [
+Gt4XMLHighlightDefaults class >> new [
 	"if the theme was changed since last initialization, reset the defaults"
 	self uiTheme = Smalltalk ui theme
 		ifFalse: [self resetDefaults].
@@ -39,12 +39,12 @@ GT4XMLHighlightDefaults class >> new [
 ]
 
 { #category : #'class initialization' }
-GT4XMLHighlightDefaults class >> resetDefaults [
+Gt4XMLHighlightDefaults class >> resetDefaults [
 	defaultDefaultColor := nil
 ]
 
 { #category : #private }
-GT4XMLHighlightDefaults class >> textColorForShoutProperty: aShoutProperty [
+Gt4XMLHighlightDefaults class >> textColorForShoutProperty: aShoutProperty [
 	^ TextColor color:
 		(((SHTextStylerST80 new attributesFor: aShoutProperty)
 			detect: [:each | each respondsTo: #color]
@@ -52,11 +52,11 @@ GT4XMLHighlightDefaults class >> textColorForShoutProperty: aShoutProperty [
 ]
 
 { #category : #private }
-GT4XMLHighlightDefaults class >> uiTheme [
+Gt4XMLHighlightDefaults class >> uiTheme [
 	^ uiTheme ifNil: [uiTheme := Smalltalk ui theme]
 ]
 
 { #category : #defaults }
-GT4XMLHighlightDefaults >> defaultColor [
+Gt4XMLHighlightDefaults >> defaultColor [
 	^ self class defaultDefaultColor
 ]

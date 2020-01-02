@@ -2,24 +2,24 @@
 This class is a tokenizer for well-formed XML that tracks token start/end positions. Does not support entities or validation.
 "
 Class {
-	#name : #GT4XMLPositionWellFormedParserTokenizer,
+	#name : #Gt4XMLPositionWellFormedParserTokenizer,
 	#superclass : #XMLWellFormedParserTokenizer,
 	#instVars : [
 		'isInEntityReference',
 		'isInAttlistDeclaration'
 	],
-	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting-Parser'
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextAttlistDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextAttlistDeclaration [
 	isInAttlistDeclaration := true.
 	super nextAttlistDeclaration.
 	isInAttlistDeclaration := false.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextAttributeName [
+Gt4XMLPositionWellFormedParserTokenizer >> nextAttributeName [
 	| name |
 
 	isInAttlistDeclaration
@@ -36,7 +36,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextAttributeName [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextAttributeValue [
+Gt4XMLPositionWellFormedParserTokenizer >> nextAttributeValue [
 	| value |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -47,14 +47,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextAttributeValue [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextCDataSection [
+Gt4XMLPositionWellFormedParserTokenizer >> nextCDataSection [
 	driver handleStartCDataPosition: self currentPosition - 1.
 	super nextCDataSection.
 	driver handleEndCDataPosition: self currentPosition.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextCharacterReferenceOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextCharacterReferenceOnCharacterStream [
 	| result |
 
 	driver handleStartEntityReferencePosition: self currentPosition.
@@ -65,20 +65,20 @@ GT4XMLPositionWellFormedParserTokenizer >> nextCharacterReferenceOnCharacterStre
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextComment [
+Gt4XMLPositionWellFormedParserTokenizer >> nextComment [
 	driver handleStartCommentPosition: self currentPosition - 1.
 	super nextComment.
 	driver handleEndCommentPosition: self currentPosition.
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextDoctypeDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextDoctypeDeclaration [
 	driver handleStartDoctypeDeclarationPosition: self currentPosition - 1.
 	super nextDoctypeDeclaration.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextElementName [
+Gt4XMLPositionWellFormedParserTokenizer >> nextElementName [
 	| name |
 
 	driver handleStartNamePosition: self currentPosition + 1.
@@ -89,20 +89,20 @@ GT4XMLPositionWellFormedParserTokenizer >> nextElementName [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextElementNameOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextElementNameOnCharacterStream [
 	driver handleStartNamePosition: self currentPosition + 1.
 	super nextElementNameOnCharacterStream.
 	driver handleEndNamePosition: self currentPosition.
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextEndDoctypeDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextEndDoctypeDeclaration [
 	super nextEndDoctypeDeclaration.
 	driver handleEndDoctypeDeclarationPosition: self currentPosition.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextEndTag [
+Gt4XMLPositionWellFormedParserTokenizer >> nextEndTag [
 	| startPosition |
 
 	startPosition := self currentPosition + 2.
@@ -113,7 +113,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextEndTag [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextEntityName [
+Gt4XMLPositionWellFormedParserTokenizer >> nextEntityName [
 	isInEntityReference
 		ifTrue: [^ super nextEntityName]
 		ifFalse: [| entityName |
@@ -124,7 +124,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextEntityName [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextEntityValue [
+Gt4XMLPositionWellFormedParserTokenizer >> nextEntityValue [
 	| value |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -135,7 +135,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextEntityValue [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextGeneralEntityReferenceOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextGeneralEntityReferenceOnCharacterStream [
 	isInEntityReference := true.
 	driver handleStartEntityReferencePosition: self currentPosition.
 	self nextEntityName.
@@ -147,14 +147,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextGeneralEntityReferenceOnCharacter
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextNmtokenOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextNmtokenOnCharacterStream [
 	driver handleStartNamePosition: self currentPosition + 1.
 	super nextNmtokenOnCharacterStream.
 	driver handleEndNamePosition: self currentPosition.
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextNotationName [
+Gt4XMLPositionWellFormedParserTokenizer >> nextNotationName [
 	| name |
 
 	driver handleStartNamePosition: self currentPosition + 1.
@@ -165,14 +165,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextNotationName [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextNotationNameOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextNotationNameOnCharacterStream [
 	driver handleStartNamePosition: self currentPosition + 1.
 	super nextNotationNameOnCharacterStream.
 	driver handleEndNamePosition: self currentPosition.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextPIData [
+Gt4XMLPositionWellFormedParserTokenizer >> nextPIData [
 	| nextChar quotedStringNameStart quotedStringStart quote |
 
 	characterStream reset.
@@ -227,14 +227,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextPIData [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextPIWithTarget: aTarget [
+Gt4XMLPositionWellFormedParserTokenizer >> nextPIWithTarget: aTarget [
 	driver handleStartPIPosition: self currentPosition - (aTarget size + 1).
 	super nextPIWithTarget: aTarget.
 	driver handleEndPIPosition: self currentPosition.
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReference [
+Gt4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReference [
 	isInEntityReference := true.
 	driver handleStartEntityReferencePosition: self currentPosition.
 	self nextEntityName.
@@ -244,17 +244,17 @@ GT4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReference [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReferenceInDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReferenceInDeclaration [
 	^ self nextParameterEntityReference
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReferenceOnCharacterStream [
+Gt4XMLPositionWellFormedParserTokenizer >> nextParameterEntityReferenceOnCharacterStream [
 	^ self nextParameterEntityReference
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextPublicIDLiteral [
+Gt4XMLPositionWellFormedParserTokenizer >> nextPublicIDLiteral [
 	| publicID |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -265,14 +265,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextPublicIDLiteral [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextSubsetDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextSubsetDeclaration [
 	driver handleStartDeclaration: self currentPosition - 1.
 	super nextSubsetDeclaration.
 	driver handleEndDeclaration: self currentPosition.
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteral [
+Gt4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteral [
 	| systemID |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -283,7 +283,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteral [
 ]
 
 { #category : #'tokenizing - dtd' }
-GT4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteralWithoutURIFragment [
+Gt4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteralWithoutURIFragment [
 	| systemID |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -294,14 +294,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextSystemIDLiteralWithoutURIFragment
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextTag [
+Gt4XMLPositionWellFormedParserTokenizer >> nextTag [
 	driver handleStartTagPosition: self currentPosition.
 	super nextTag.
 	driver handleEndTagPosition: self currentPosition.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextXMLAttributeName: aName [
+Gt4XMLPositionWellFormedParserTokenizer >> nextXMLAttributeName: aName [
 	| startPosition |
 
 	startPosition := self currentPosition + 1.
@@ -311,14 +311,14 @@ GT4XMLPositionWellFormedParserTokenizer >> nextXMLAttributeName: aName [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextXMLDeclaration [
+Gt4XMLPositionWellFormedParserTokenizer >> nextXMLDeclaration [
 	driver handleStartXMLDeclarationPosition: self currentPosition - 4. "'<?xml' size"
 	super nextXMLDeclaration.
 	driver handleEndXMLDeclarationPosition: self currentPosition.
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextXMLEncodingAttributeValue [
+Gt4XMLPositionWellFormedParserTokenizer >> nextXMLEncodingAttributeValue [
 	| encoding |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -329,7 +329,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextXMLEncodingAttributeValue [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextXMLStandaloneAttributeValue [
+Gt4XMLPositionWellFormedParserTokenizer >> nextXMLStandaloneAttributeValue [
 	| yesOrNo |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -340,7 +340,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextXMLStandaloneAttributeValue [
 ]
 
 { #category : #tokenizing }
-GT4XMLPositionWellFormedParserTokenizer >> nextXMLVersionAttributeValue [
+Gt4XMLPositionWellFormedParserTokenizer >> nextXMLVersionAttributeValue [
 	| version |
 
 	driver handleStartQuotedStringPosition: self currentPosition + 1.
@@ -351,7 +351,7 @@ GT4XMLPositionWellFormedParserTokenizer >> nextXMLVersionAttributeValue [
 ]
 
 { #category : #initialization }
-GT4XMLPositionWellFormedParserTokenizer >> setDriver: aDriver stream: aStream readLimit: anInteger [
+Gt4XMLPositionWellFormedParserTokenizer >> setDriver: aDriver stream: aStream readLimit: anInteger [
 	super
 		setDriver: aDriver
 		stream: aStream

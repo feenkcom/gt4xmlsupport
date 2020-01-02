@@ -2,8 +2,8 @@
 This class is a highlighter to highlight XML document Text objects using XMLHighlights.
 "
 Class {
-	#name : #GT4XMLDocumentHighlighter,
-	#superclass : #GT4XMLHighlighter,
+	#name : #Gt4XMLDocumentHighlighter,
+	#superclass : #Gt4XMLHighlighter,
 	#instVars : [
 		'xmlDeclarationColor',
 		'doctypeDeclarationColor',
@@ -32,139 +32,139 @@ Class {
 }
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> cdataColor [
+Gt4XMLDocumentHighlighter >> cdataColor [
 	^ cdataColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> cdataColor: aTextColor [
+Gt4XMLDocumentHighlighter >> cdataColor: aTextColor [
 	cdataColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> commentColor [
+Gt4XMLDocumentHighlighter >> commentColor [
 	^ commentColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> commentColor: aTextColor [
+Gt4XMLDocumentHighlighter >> commentColor: aTextColor [
 	commentColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> declarationColor [
+Gt4XMLDocumentHighlighter >> declarationColor [
 	^ declarationColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> declarationColor: aTextColor [
+Gt4XMLDocumentHighlighter >> declarationColor: aTextColor [
 	declarationColor := aTextColor
 ]
 
 { #category : #defaults }
-GT4XMLDocumentHighlighter >> defaultsClass [
-	^ GT4XMLDocumentHighlightDefaults
+Gt4XMLDocumentHighlighter >> defaultsClass [
+	^ Gt4XMLDocumentHighlightDefaults
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> doctypeDeclarationColor [
+Gt4XMLDocumentHighlighter >> doctypeDeclarationColor [
 	^ doctypeDeclarationColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> doctypeDeclarationColor: aTextColor [
+Gt4XMLDocumentHighlighter >> doctypeDeclarationColor: aTextColor [
 	doctypeDeclarationColor := aTextColor
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endCDataHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endCDataHighlightPosition: aPosition [
 	self
 		endHighlight: cdataHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endCommentHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endCommentHighlightPosition: aPosition [
 	self
 		endHighlight: commentHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endDeclarationHighlightPosition: aPosition [
 	self
 		endHighlight: declarationHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endDoctypeDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endDoctypeDeclarationHighlightPosition: aPosition [
 	self
 		endHighlight: doctypeDeclarationHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endEntityReferenceHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endEntityReferenceHighlightPosition: aPosition [
 	self
 		endHighlight: entityReferenceHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endNameHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endNameHighlightPosition: aPosition [
 	self
 		endHighlight: nameHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endPIHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endPIHighlightPosition: aPosition [
 	self
 		endHighlight: piHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endQuotedStringHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endQuotedStringHighlightPosition: aPosition [
 	self
 		endHighlight: quotedStringHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endQuotedStringNameHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endQuotedStringNameHighlightPosition: aPosition [
 	self
 		endHighlight: quotedStringNameHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endTagHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endTagHighlightPosition: aPosition [
 	self
 		endHighlight: tagHighlight
 		position: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> endXMLDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> endXMLDeclarationHighlightPosition: aPosition [
 	self
 		endHighlight: xmlDeclarationHighlight
 		position: aPosition
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> entityReferenceColor [
+Gt4XMLDocumentHighlighter >> entityReferenceColor [
 	^ entityReferenceColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> entityReferenceColor: aTextColor [
+Gt4XMLDocumentHighlighter >> entityReferenceColor: aTextColor [
 	entityReferenceColor := aTextColor
 ]
 
 { #category : #initialization }
-GT4XMLDocumentHighlighter >> initializeColorsWithDefaults: aDefaults [
+Gt4XMLDocumentHighlighter >> initializeColorsWithDefaults: aDefaults [
 	super initializeColorsWithDefaults: aDefaults.
 
 	self
@@ -182,47 +182,47 @@ GT4XMLDocumentHighlighter >> initializeColorsWithDefaults: aDefaults [
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> nameColor [
+Gt4XMLDocumentHighlighter >> nameColor [
 	^ nameColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> nameColor: aTextColor [
+Gt4XMLDocumentHighlighter >> nameColor: aTextColor [
 	nameColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> piColor [
+Gt4XMLDocumentHighlighter >> piColor [
 	^ piColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> piColor: aTextColor [
+Gt4XMLDocumentHighlighter >> piColor: aTextColor [
 	piColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> quotedStringColor [
+Gt4XMLDocumentHighlighter >> quotedStringColor [
 	^ quotedStringColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> quotedStringColor: aTextColor [
+Gt4XMLDocumentHighlighter >> quotedStringColor: aTextColor [
 	quotedStringColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> quotedStringNameColor [
+Gt4XMLDocumentHighlighter >> quotedStringNameColor [
 	^ quotedStringNameColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> quotedStringNameColor: aTextColor [
+Gt4XMLDocumentHighlighter >> quotedStringNameColor: aTextColor [
 	quotedStringNameColor := aTextColor
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startCDataHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startCDataHighlightPosition: aPosition [
 	cdataHighlight :=
 		self
 			newHighlightColor: self cdataColor
@@ -230,7 +230,7 @@ GT4XMLDocumentHighlighter >> startCDataHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startCommentHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startCommentHighlightPosition: aPosition [
 	commentHighlight :=
 		self
 			newHighlightColor: self commentColor
@@ -238,7 +238,7 @@ GT4XMLDocumentHighlighter >> startCommentHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startDeclarationHighlightPosition: aPosition [
 	declarationHighlight :=
 		self
 			newHighlightColor: self declarationColor
@@ -246,7 +246,7 @@ GT4XMLDocumentHighlighter >> startDeclarationHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startDoctypeDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startDoctypeDeclarationHighlightPosition: aPosition [
 	doctypeDeclarationHighlight :=
 		self
 			newHighlightColor: self doctypeDeclarationColor
@@ -254,7 +254,7 @@ GT4XMLDocumentHighlighter >> startDoctypeDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startEntityReferenceHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startEntityReferenceHighlightPosition: aPosition [
 	entityReferenceHighlight :=
 		self
 			newHighlightColor: self entityReferenceColor
@@ -262,7 +262,7 @@ GT4XMLDocumentHighlighter >> startEntityReferenceHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startNameHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startNameHighlightPosition: aPosition [
 	nameHighlight :=
 		self
 			newHighlightColor: self nameColor
@@ -270,7 +270,7 @@ GT4XMLDocumentHighlighter >> startNameHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startPIHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startPIHighlightPosition: aPosition [
 	piHighlight :=
 		self
 			newHighlightColor: self piColor
@@ -278,7 +278,7 @@ GT4XMLDocumentHighlighter >> startPIHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startQuotedStringHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startQuotedStringHighlightPosition: aPosition [
 	quotedStringHighlight :=
 		self
 			newHighlightColor: self quotedStringColor
@@ -286,7 +286,7 @@ GT4XMLDocumentHighlighter >> startQuotedStringHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startQuotedStringNameHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startQuotedStringNameHighlightPosition: aPosition [
 	quotedStringNameHighlight :=
 		self
 			newHighlightColor: self quotedStringNameColor
@@ -294,7 +294,7 @@ GT4XMLDocumentHighlighter >> startQuotedStringNameHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startTagHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startTagHighlightPosition: aPosition [
 	tagHighlight :=
 		self
 			newHighlightColor: self tagColor
@@ -302,7 +302,7 @@ GT4XMLDocumentHighlighter >> startTagHighlightPosition: aPosition [
 ]
 
 { #category : #'highlighting - positions' }
-GT4XMLDocumentHighlighter >> startXMLDeclarationHighlightPosition: aPosition [
+Gt4XMLDocumentHighlighter >> startXMLDeclarationHighlightPosition: aPosition [
 	xmlDeclarationHighlight :=
 		self
 			newHighlightColor: self xmlDeclarationColor
@@ -310,21 +310,21 @@ GT4XMLDocumentHighlighter >> startXMLDeclarationHighlightPosition: aPosition [
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> tagColor [
+Gt4XMLDocumentHighlighter >> tagColor [
 	^ tagColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> tagColor: aTextColor [
+Gt4XMLDocumentHighlighter >> tagColor: aTextColor [
 	tagColor := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> xmlDeclarationColor [
+Gt4XMLDocumentHighlighter >> xmlDeclarationColor [
 	^ xmlDeclarationColor
 ]
 
 { #category : #accessing }
-GT4XMLDocumentHighlighter >> xmlDeclarationColor: aTextColor [
+Gt4XMLDocumentHighlighter >> xmlDeclarationColor: aTextColor [
 	xmlDeclarationColor := aTextColor
 ]

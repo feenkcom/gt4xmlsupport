@@ -2,7 +2,7 @@
 This is a base class for highlighters that highlight Text objects using XMLHighlights.
 "
 Class {
-	#name : #GT4XMLHighlighter,
+	#name : #Gt4XMLHighlighter,
 	#superclass : #Object,
 	#instVars : [
 		'highlights',
@@ -12,46 +12,46 @@ Class {
 }
 
 { #category : #accessing }
-GT4XMLHighlighter >> defaultColor [
+Gt4XMLHighlighter >> defaultColor [
 	^ defaultHighlight color
 ]
 
 { #category : #accessing }
-GT4XMLHighlighter >> defaultColor: aTextColor [
+Gt4XMLHighlighter >> defaultColor: aTextColor [
 	defaultHighlight color: aTextColor
 ]
 
 { #category : #defaults }
-GT4XMLHighlighter >> defaults [
+Gt4XMLHighlighter >> defaults [
 	^ self defaultsClass new
 ]
 
 { #category : #defaults }
-GT4XMLHighlighter >> defaultsClass [
-	^ GT4XMLHighlightDefaults
+Gt4XMLHighlighter >> defaultsClass [
+	^ Gt4XMLHighlightDefaults
 ]
 
 { #category : #private }
-GT4XMLHighlighter >> endHighlight: aHighlightOrNil position: aPosition [
+Gt4XMLHighlighter >> endHighlight: aHighlightOrNil position: aPosition [
 	aHighlightOrNil
 		ifNotNil: [aHighlightOrNil end: aPosition]
 ]
 
 { #category : #highlighting }
-GT4XMLHighlighter >> highlightText: aText [
+Gt4XMLHighlighter >> highlightText: aText [
 	highlights do: [:each | each applyToText: aText]
 ]
 
 { #category : #highlighting }
-GT4XMLHighlighter >> highlightText: aText withColor: aTextColor startingAt: aPosition [
-	GT4XMLHighlightedToken new
+Gt4XMLHighlighter >> highlightText: aText withColor: aTextColor startingAt: aPosition [
+	Gt4XMLHighlightedToken new
 		color: aTextColor;
 		start: aPosition;
 		applyToText: aText
 ]
 
 { #category : #initialization }
-GT4XMLHighlighter >> initialize [
+Gt4XMLHighlighter >> initialize [
 	super initialize.
 
 	self
@@ -60,22 +60,22 @@ GT4XMLHighlighter >> initialize [
 ]
 
 { #category : #initialization }
-GT4XMLHighlighter >> initializeColorsWithDefaults: aDefaults [
+Gt4XMLHighlighter >> initializeColorsWithDefaults: aDefaults [
 	self defaultColor: aDefaults defaultColor
 ]
 
 { #category : #initialization }
-GT4XMLHighlighter >> initializeHighlights [
-	defaultHighlight := GT4XMLHighlightedToken new.
+Gt4XMLHighlighter >> initializeHighlights [
+	defaultHighlight := Gt4XMLHighlightedToken new.
 	highlights := OrderedCollection with: defaultHighlight.
 ]
 
 { #category : #private }
-GT4XMLHighlighter >> newHighlightColor: aTextColor position: aPosition [
+Gt4XMLHighlighter >> newHighlightColor: aTextColor position: aPosition [
 	^ aTextColor
 		ifNotNil: [
 			highlights addLast:
-				(GT4XMLHighlightedToken new
+				(Gt4XMLHighlightedToken new
 					color: aTextColor;
 					start: aPosition)]
 ]

@@ -2,7 +2,7 @@
 This class stores a highlight TextColor and 1-based start/end highlight positions.
 "
 Class {
-	#name : #GT4XMLHighlightedToken,
+	#name : #Gt4XMLHighlightedToken,
 	#superclass : #Object,
 	#instVars : [
 		'color',
@@ -13,7 +13,7 @@ Class {
 }
 
 { #category : #highlighting }
-GT4XMLHighlightedToken >> applyToText: aText [
+Gt4XMLHighlightedToken >> applyToText: aText [
 	| attributeStart attributeEnd |
 
 	"must be bounded between 1 and aText size to avoid errors if the text
@@ -29,31 +29,31 @@ GT4XMLHighlightedToken >> applyToText: aText [
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> color [
+Gt4XMLHighlightedToken >> color [
 	^ color
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> color: aTextColor [
+Gt4XMLHighlightedToken >> color: aTextColor [
 	color := aTextColor
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> end [
+Gt4XMLHighlightedToken >> end [
 	^ end
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> end: anEndPosition [
+Gt4XMLHighlightedToken >> end: anEndPosition [
 	end := anEndPosition
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> start [
+Gt4XMLHighlightedToken >> start [
 	^ start
 ]
 
 { #category : #accessing }
-GT4XMLHighlightedToken >> start: aStartPosition [
+Gt4XMLHighlightedToken >> start: aStartPosition [
 	start := aStartPosition
 ]

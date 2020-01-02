@@ -2,100 +2,100 @@
 This class is a SAXHandler that can track the positions of tokens. Does not support validation or entity replacement but can check wellformedness and namespaces.
 "
 Class {
-	#name : #GT4XMLSAXPositionHandler,
+	#name : #Gt4XMLSAXPositionHandler,
 	#superclass : #SAXHandler,
-	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting-Parser'
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
 { #category : #defaults }
-GT4XMLSAXPositionHandler >> driverClass [
-	^ GT4XMLSAXPositionParserDriver
+Gt4XMLSAXPositionHandler >> driverClass [
+	^ Gt4XMLSAXPositionParserDriver
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endCDataPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endCDataPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endCommentPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endCommentPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endDeclarationPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endDoctypeDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endDoctypeDeclarationPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endEntityReferencePosition: aPosition [
+Gt4XMLSAXPositionHandler >> endEntityReferencePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endNamePosition: aPosition [
+Gt4XMLSAXPositionHandler >> endNamePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endPIPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endPIPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endQuotedStringNamePosition: aPosition [
+Gt4XMLSAXPositionHandler >> endQuotedStringNamePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endQuotedStringPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endQuotedStringPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endTagPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endTagPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> endXMLDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> endXMLDeclarationPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startCDataPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startCDataPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startCommentPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startCommentPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startDeclarationPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startDoctypeDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startDoctypeDeclarationPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startEntityReferencePosition: aPosition [
+Gt4XMLSAXPositionHandler >> startEntityReferencePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startNamePosition: aPosition [
+Gt4XMLSAXPositionHandler >> startNamePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startPIPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startPIPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startQuotedStringNamePosition: aPosition [
+Gt4XMLSAXPositionHandler >> startQuotedStringNamePosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startQuotedStringPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startQuotedStringPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startTagPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startTagPosition: aPosition [
 ]
 
 { #category : #'handling - positions' }
-GT4XMLSAXPositionHandler >> startXMLDeclarationPosition: aPosition [
+Gt4XMLSAXPositionHandler >> startXMLDeclarationPosition: aPosition [
 ]

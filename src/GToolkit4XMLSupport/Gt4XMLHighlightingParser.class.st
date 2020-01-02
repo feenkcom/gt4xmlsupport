@@ -1,6 +1,6 @@
 Class {
 	#name : #Gt4XMLHighlightingParser,
-	#superclass : #GT4XMLSAXPositionHandler,
+	#superclass : #Gt4XMLSAXPositionHandler,
 	#instVars : [
 		'highlighter',
 		'encoding'
