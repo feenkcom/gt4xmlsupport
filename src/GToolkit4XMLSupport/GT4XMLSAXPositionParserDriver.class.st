@@ -2,132 +2,132 @@
 This class is a SAX driver that forwards token start/end positions to a SAXHandler. Does not support entities or validation, but does support namespaces.
 "
 Class {
-	#name : #SAXPositionParserDriver,
+	#name : #GT4XMLSAXPositionParserDriver,
 	#superclass : #SAXParserDriver,
-	#category : #GToolkit4XMLSupport
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting-Parser'
 }
 
 { #category : #testing }
-SAXPositionParserDriver >> decodesCharacters [
+GT4XMLSAXPositionParserDriver >> decodesCharacters [
 	^ false
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndCDataPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndCDataPosition: aPosition [
 	self saxHandler endCDataPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndCommentPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndCommentPosition: aPosition [
 	self saxHandler endCommentPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndDeclaration: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndDeclaration: aPosition [
 	self saxHandler endDeclarationPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndDoctypeDeclarationPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndDoctypeDeclarationPosition: aPosition [
 	self saxHandler endDoctypeDeclarationPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndEntityReferencePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndEntityReferencePosition: aPosition [
 	self saxHandler endEntityReferencePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndNamePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndNamePosition: aPosition [
 	self saxHandler endNamePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndPIPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndPIPosition: aPosition [
 	self saxHandler endPIPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndQuotedStringNamePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndQuotedStringNamePosition: aPosition [
 	self saxHandler endQuotedStringNamePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndQuotedStringPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndQuotedStringPosition: aPosition [
 	self saxHandler endQuotedStringPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndTagPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndTagPosition: aPosition [
 	self saxHandler endTagPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleEndXMLDeclarationPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleEndXMLDeclarationPosition: aPosition [
 	self saxHandler endXMLDeclarationPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartCDataPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartCDataPosition: aPosition [
 	self saxHandler startCDataPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartCommentPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartCommentPosition: aPosition [
 	self saxHandler startCommentPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartDeclaration: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartDeclaration: aPosition [
 	self saxHandler startDeclarationPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartDoctypeDeclarationPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartDoctypeDeclarationPosition: aPosition [
 	self saxHandler startDoctypeDeclarationPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartEntityReferencePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartEntityReferencePosition: aPosition [
 	self saxHandler startEntityReferencePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartNamePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartNamePosition: aPosition [
 	self saxHandler startNamePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartPIPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartPIPosition: aPosition [
 	self saxHandler startPIPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartQuotedStringNamePosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartQuotedStringNamePosition: aPosition [
 	self saxHandler startQuotedStringNamePosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartQuotedStringPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartQuotedStringPosition: aPosition [
 	self saxHandler startQuotedStringPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartTagPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartTagPosition: aPosition [
 	self saxHandler startTagPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-SAXPositionParserDriver >> handleStartXMLDeclarationPosition: aPosition [
+GT4XMLSAXPositionParserDriver >> handleStartXMLDeclarationPosition: aPosition [
 	self saxHandler startXMLDeclarationPosition: aPosition
 ]
 
 { #category : #testing }
-SAXPositionParserDriver >> isValidating [
+GT4XMLSAXPositionParserDriver >> isValidating [
 	^ false
 ]
 
 { #category : #defaults }
-SAXPositionParserDriver >> tokenizerClass [
-	^ XMLPositionWellFormedParserTokenizer
+GT4XMLSAXPositionParserDriver >> tokenizerClass [
+	^ GT4XMLPositionWellFormedParserTokenizer
 ]
