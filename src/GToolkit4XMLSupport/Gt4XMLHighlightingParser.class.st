@@ -1,18 +1,15 @@
-"
-This class is an XML parser that can convert its input to Text objects styled with highlighting after parsing.
-"
 Class {
-	#name : #GT4XMLHighlightingParser,
+	#name : #Gt4XMLHighlightingParser,
 	#superclass : #GT4XMLSAXPositionHandler,
 	#instVars : [
 		'highlighter',
 		'encoding'
 	],
-	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting-Parser'
+	#category : #GToolkit4XMLSupport
 }
 
 { #category : #converting }
-GT4XMLHighlightingParser >> asHighlightedText [
+Gt4XMLHighlightingParser >> asHighlightedText [
 	| text |
 
 	text := self input asString asText.
@@ -21,7 +18,7 @@ GT4XMLHighlightingParser >> asHighlightedText [
 ]
 
 { #category : #converting }
-GT4XMLHighlightingParser >> asHighlightedTextColored: aTextColor startingAt: aPosition [
+Gt4XMLHighlightingParser >> asHighlightedTextColored: aTextColor startingAt: aPosition [
 	| text |
 
 	text := self asHighlightedText.
@@ -33,139 +30,142 @@ GT4XMLHighlightingParser >> asHighlightedTextColored: aTextColor startingAt: aPo
 ]
 
 { #category : #accessing }
-GT4XMLHighlightingParser >> encoding [
+Gt4XMLHighlightingParser >> encoding [
 	^ encoding
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endCDataPosition: aPosition [
+Gt4XMLHighlightingParser >> endCDataPosition: aPosition [
 	highlighter endCDataHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endCommentPosition: aPosition [
+Gt4XMLHighlightingParser >> endCommentPosition: aPosition [
 	highlighter endCommentHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> endDeclarationPosition: aPosition [
 	highlighter endDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endDoctypeDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> endDoctypeDeclarationPosition: aPosition [
 	highlighter endDoctypeDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endEntityReferencePosition: aPosition [
+Gt4XMLHighlightingParser >> endEntityReferencePosition: aPosition [
 	highlighter endEntityReferenceHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endNamePosition: aPosition [
+Gt4XMLHighlightingParser >> endNamePosition: aPosition [
 	highlighter endNameHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endPIPosition: aPosition [
+Gt4XMLHighlightingParser >> endPIPosition: aPosition [
 	highlighter endPIHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endQuotedStringNamePosition: aPosition [
+Gt4XMLHighlightingParser >> endQuotedStringNamePosition: aPosition [
 	highlighter endQuotedStringNameHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endQuotedStringPosition: aPosition [
+Gt4XMLHighlightingParser >> endQuotedStringPosition: aPosition [
 	highlighter endQuotedStringHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endTagPosition: aPosition [
+Gt4XMLHighlightingParser >> endTagPosition: aPosition [
 	highlighter endTagHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> endXMLDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> endXMLDeclarationPosition: aPosition [
 	highlighter endXMLDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #accessing }
-GT4XMLHighlightingParser >> highlighter [
+Gt4XMLHighlightingParser >> highlighter [
 	^ highlighter
 ]
 
-{ #category : #initialization }
-GT4XMLHighlightingParser >> on: aStringOrStream [
-	super on: aStringOrStream.
+{ #category : #accessing }
+Gt4XMLHighlightingParser >> highlighter: aHighlighter [
+	highlighter := aHighlighter
+]
 
-	highlighter := GT4XMLDocumentHighlighter new.
+{ #category : #initialization }
+Gt4XMLHighlightingParser >> on: aStringOrStream [
+	super on: aStringOrStream.
 	encoding := ''.
 ]
 
 { #category : #parsing }
-GT4XMLHighlightingParser >> parsingResult [
-	^ self asHighlightedText
+Gt4XMLHighlightingParser >> parsingResult [
+	^ highlighter 
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startCDataPosition: aPosition [
+Gt4XMLHighlightingParser >> startCDataPosition: aPosition [
 	highlighter startCDataHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startCommentPosition: aPosition [
+Gt4XMLHighlightingParser >> startCommentPosition: aPosition [
 	highlighter startCommentHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> startDeclarationPosition: aPosition [
 	highlighter startDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startDoctypeDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> startDoctypeDeclarationPosition: aPosition [
 	highlighter startDoctypeDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startEntityReferencePosition: aPosition [
+Gt4XMLHighlightingParser >> startEntityReferencePosition: aPosition [
 	highlighter startEntityReferenceHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startNamePosition: aPosition [
+Gt4XMLHighlightingParser >> startNamePosition: aPosition [
 	highlighter startNameHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startPIPosition: aPosition [
+Gt4XMLHighlightingParser >> startPIPosition: aPosition [
 	highlighter startPIHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startQuotedStringNamePosition: aPosition [
+Gt4XMLHighlightingParser >> startQuotedStringNamePosition: aPosition [
 	highlighter startQuotedStringNameHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startQuotedStringPosition: aPosition [
+Gt4XMLHighlightingParser >> startQuotedStringPosition: aPosition [
 	highlighter startQuotedStringHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startTagPosition: aPosition [
+Gt4XMLHighlightingParser >> startTagPosition: aPosition [
 	highlighter startTagHighlightPosition: aPosition
 ]
 
 { #category : #'handling - positions' }
-GT4XMLHighlightingParser >> startXMLDeclarationPosition: aPosition [
+Gt4XMLHighlightingParser >> startXMLDeclarationPosition: aPosition [
 	highlighter startXMLDeclarationHighlightPosition: aPosition
 ]
 
 { #category : #'handling - lexical' }
-GT4XMLHighlightingParser >> xmlVersion: aVersionFloat encoding: anEncoding standalone: aBoolean [
+Gt4XMLHighlightingParser >> xmlVersion: aVersionFloat encoding: anEncoding standalone: aBoolean [
 	encoding := anEncoding
 ]
