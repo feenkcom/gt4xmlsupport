@@ -138,7 +138,7 @@ Gt4XMLStyler >> initializeHighlights [
 Gt4XMLStyler >> newHighlightColor: aColor position: aPosition [
 	^ aColor ifNotNil: [
 		highlights addLast:
-			(XMLHighlight new
+			(Gt4XMLHighlightedToken new
 				color: aColor;
 				start: aPosition)]
 ]
