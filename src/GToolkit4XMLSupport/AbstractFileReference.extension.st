@@ -14,7 +14,7 @@ AbstractFileReference >> gtXmlFor: aView [
 			label: 'XPath' 
 			content: [ :b | 
 			| editor |
-			editor := BrEditor new look: BrGlamorousEditorLook.
+			editor := BrEditor new look: BrGlamorousCodeEditorLook.
 			BlElement new
 				constraintsDo: [:c | c horizontal exact: 200. c vertical fitContent];
 				layout: BlLinearLayout horizontal;
