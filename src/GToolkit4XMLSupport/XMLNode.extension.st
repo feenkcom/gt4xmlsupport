@@ -68,6 +68,18 @@ XMLNode class >> gtExampleNodeWithParent [
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
+XMLNode >> gtItemsFor: aView [
+	<gtView>
+	self supportsTreeView ifFalse: [ ^ aView empty ].
+	^ aView tree
+			title: 'Tree';
+			priority: 10;
+			items: [ {self} ];
+			children: [:each | each treeViewChildren];
+			itemFormat: [:each | each gtDisplayString]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
 XMLNode >> gtSourceIn: aView [
 	<gtView>
 	^ aView textEditor
@@ -90,14 +102,8 @@ XMLNode >> gtSupportsXPathEvaluator [
 
 { #category : #'*GToolkit4XMLSupport' }
 XMLNode >> gtTreeIn: aView [
-	<gtView>
-	self supportsTreeView ifFalse: [ ^ aView empty ].
-	^ aView tree
-			title: 'Tree';
-			priority: 10;
-			items: [ {self} ];
-			children: [:each | each treeViewChildren];
-			itemFormat: [:each | each gtDisplayString]
+	self deprecated: 'please use gtItemsFor: instead'.
+	^ self gtItemsFor: aView
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
