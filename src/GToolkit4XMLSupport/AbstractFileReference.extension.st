@@ -8,7 +8,7 @@ AbstractFileReference >> gtXmlFor: aView [
 	^ aView explicit
 		title: 'XML';
 		priority: 1;
-		actionButtonIcon: BrGlamorousIcons tree asElement 
+		actionButtonIcon: BrGlamorousIcons tree 
 			action: [ :aButton | aButton phlow spawnObject: (XMLDOMParser parse: self contents) ];
 		actionDropdownButtonIcon: nil 
 			label: 'XPath' 
@@ -20,7 +20,7 @@ AbstractFileReference >> gtXmlFor: aView [
 				layout: BlLinearLayout horizontal;
 				padding: (BlInsets all: 10);
 				addChild: editor;
-				addChild: (BrButton new look: BrGlamorousButtonWithIconLook; icon: BrGlamorousIcons search asElement; label: 'Search with XPath'; action: [ b phlow spawnObject: ((XMLDOMParser parse: self contents) xpath: editor editor text asString) ])];
+				addChild: (BrButton new look: BrGlamorousButtonWithIconLook; icon: BrGlamorousVectorIcons search; label: 'Search with XPath'; action: [ b phlow spawnObject: ((XMLDOMParser parse: self contents) xpath: editor editor text asString) ])];
 		stencil: [ | editorElement textEditor text |
 			textEditor := BrTextEditor new.
 			textEditor styler: Gt4XMLStyler new.
