@@ -114,7 +114,7 @@ XMLNode >> gtXPathFor: aView [
 		title: 'XPath';
 		look: BrGlamorousEditorLook new;
 		text: ['self::node()'];
-		actionButtonIcon: BrGlamorousIcons playinspect  
+		actionButtonIcon: BrGlamorousVectorIcons playinspect  
 			action: [ :aButton | 
 			| xpath |
 			xpath := aButton phlow textViewContent asString.
