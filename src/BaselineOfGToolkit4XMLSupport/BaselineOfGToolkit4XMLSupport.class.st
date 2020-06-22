@@ -14,6 +14,6 @@ BaselineOfGToolkit4XMLSupport >> baseline: spec [
 			baseline: 'XMLWriter' with: [
 				spec repository: 'github://feenkcom/XMLWriter:v0.6.0/src' ].
 		spec package: 'GToolkit4XMLSupport' with: [
-				spec requires: #(#XPath #XMLWriter ). ]. ].
+				spec requires: #('XPath' 'XMLWriter' ). ]. ].
 
 ]
