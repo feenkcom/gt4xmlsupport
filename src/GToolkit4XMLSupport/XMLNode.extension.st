@@ -70,13 +70,14 @@ XMLNode class >> gtExampleNodeWithParent [
 { #category : #'*GToolkit4XMLSupport' }
 XMLNode >> gtItemsFor: aView [
 	<gtView>
-	self supportsTreeView ifFalse: [ ^ aView empty ].
+	self supportsTreeView
+		ifFalse: [ ^ aView empty ].
 	^ aView tree
-			title: 'Tree';
-			priority: 10;
-			items: [ {self} ];
-			children: [:each | each treeViewChildren];
-			itemFormat: [:each | each gtDisplayString]
+		title: 'Tree';
+		priority: 10;
+		items: [ {self} ];
+		children: [ :each | each treeViewChildren ];
+		itemText: [ :each | each gtDisplayString ]
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
