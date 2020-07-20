@@ -22,7 +22,7 @@ XMLNodeWithElements >> spotterForAllElementsFor: aStep [
 		title: 'All elements';
 		allCandidates: [self allElements];
 		itemName: #gtDisplayString;
-		filter: GTFilterSubstring;
+		filter: GtFilterSubstring;
 		wantsToDisplayOnEmptyQuery: true
 ]
 
@@ -33,7 +33,7 @@ XMLNodeWithElements >> spotterForDirectElementsFor: aStep [
 		title: 'Direct elements';
 		allCandidates: [self elements];
 		itemName: #gtDisplayString;
-		filter: GTFilterSubstring;
+		filter: GtFilterSubstring;
 		wantsToDisplayOnEmptyQuery: true
 ]
 
