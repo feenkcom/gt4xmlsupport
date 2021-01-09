@@ -50,6 +50,15 @@ XMLElement >> gtInspectorImageIn: composite inContext: aGTInspector [
 		when: [ (self isNamed: 'img') and: [ self includesAttribute: 'src' ] ]
 ]
 
+{ #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtNamespaceNodesFor: aView [
+	<gtView>
+	^ aView list
+		title: 'Namespaces';
+		priority: 30;
+		items: [ self namespaceNodes ]
+]
+
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> supportsRemoveAction [
 	^ self hasParent
