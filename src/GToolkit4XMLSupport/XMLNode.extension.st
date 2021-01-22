@@ -61,6 +61,13 @@ XMLNode >> addRemoveActionTo: aPresentation in: aComposite inContext: aGTInspect
 		entitled: 'Remove'.
 ]
 
+{ #category : #'*GToolkit4XMLSupport' }
+XMLNode >> gtDisplayText [
+	| aText |
+	aText := super gtDisplayText.
+	^ Gt4XMLStyler new style: aText.
+]
+
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNode class >> gtExampleNodeWithParent [
 	<gtExample>
@@ -77,7 +84,8 @@ XMLNode >> gtItemsFor: aView [
 		priority: 10;
 		items: [ {self} ];
 		children: [ :each | each treeViewChildren ];
-		itemText: [ :each | each gtDisplayString ]
+		itemText: [ :each | each gtDisplayText ];
+		expandUpTo: 2
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
