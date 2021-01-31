@@ -89,6 +89,16 @@ XMLNode >> gtItemsFor: aView [
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
+XMLNode >> gtParentsFor: aView [
+	<gtView>
+	^ aView list
+		title: 'Parents';
+		priority: 25;
+		items: [ self %% '*' ];
+		itemText: [ :each | each gtDisplayText ]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
 XMLNode >> gtSourceIn: aView [
 	<gtView>
 	^ aView textEditor
