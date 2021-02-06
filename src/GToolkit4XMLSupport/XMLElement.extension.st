@@ -10,6 +10,19 @@ XMLElement >> formForImageEntity: imageEntity [
     ^ parser nextImage
 ]
 
+{ #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtAttributesFor: aView [
+	<gtView>
+	self hasAttributes
+		ifFalse: [ ^ aView empty ].
+	^ aView columnedList
+		title: 'Attributes';
+		priority: 23;
+		items: [ self attributeNodes ];
+		column: 'Name' item: #name;
+		column: 'Value' item: #value weight: 2
+]
+
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement class >> gtExampleXmlNode [
 	<gtExample>
@@ -53,10 +66,13 @@ XMLElement >> gtInspectorImageIn: composite inContext: aGTInspector [
 { #category : #'*GToolkit4XMLSupport' }
 XMLElement >> gtNamespaceNodesFor: aView [
 	<gtView>
-	^ aView list
+	^ aView columnedList
 		title: 'Namespaces';
 		priority: 30;
-		items: [ self namespaceNodes ]
+		items: [ self namespaceNodes sort: [ :a :b |
+			a name < b name ] ];
+		column: 'Name' item: #name;
+		column: 'URI' item: #uri weight: 2
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
