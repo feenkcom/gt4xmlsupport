@@ -13,10 +13,11 @@ XMLDocument class >> gtExampleXmlNode [
 	^ XMLDOMParser parse: '<document><a></a><b></b></document>'
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
-XMLDocument >> newSourceEditorTextStylerDecorator [
-	^ GLMXMLDocumentHighlighterTextStylerDecorator new
-		configuration: self configuration
+{ #category : #'*GToolkit4XMLSupport' }
+XMLDocument >> namespaceNodes [
+	^ self hasChildren
+		ifTrue: [ self firstNode namespaceNodes ] 
+		ifFalse: [ #() ]
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
