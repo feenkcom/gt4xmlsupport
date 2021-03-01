@@ -3,8 +3,10 @@ Extension { #name : #AbstractFileReference }
 { #category : #'*GToolkit4XMLSupport' }
 AbstractFileReference >> gtXmlFor: aView [
 	<gtView>
-	(self isFile and: [ (GtFileUtility mimeTypeOfExtension: self extension) 
-		= ZnMimeType applicationXml ]) ifFalse: [ ^ aView empty ].
+	(self isFile and: [
+		| xmlFileHandle |
+		xmlFileHandle := XMLFileSystemFileHandle fileReference: self.
+		xmlFileHandle isXMLDocumentFile ]) ifFalse: [ ^ aView empty ].
 	^ aView explicit
 		title: 'XML';
 		priority: 1;
