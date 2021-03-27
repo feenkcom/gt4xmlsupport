@@ -104,7 +104,7 @@ XMLNode >> gtSourceIn: aView [
 	^ aView textEditor
 		title: 'Source';
 		styler: Gt4XMLStyler new;
-		look: BrGlamorousCodeEditorLook;
+		aptitude: BrGlamorousCodeEditorAptitude;
 		priority: 20;
 		text: [
 			String new: 10000 streamContents: [:stream |
@@ -131,7 +131,7 @@ XMLNode >> gtXPathFor: aView [
 	self gtSupportsXPathEvaluator ifFalse: [^ aView empty].
 	^ aView textEditor
 		title: 'XPath';
-		look: BrGlamorousEditorLook;
+		aptitude: BrGlamorousEditorAptitude;
 		text: ['self::node()'];
 		actionButtonIcon: BrGlamorousVectorIcons playinspect  
 			action: [ :aButton | 
