@@ -1,5 +1,6 @@
 "
 This class stores a highlight TextColor and 1-based start/end highlight positions.
+
 "
 Class {
 	#name : #Gt4XMLHighlightedToken,

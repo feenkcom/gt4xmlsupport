@@ -1,5 +1,6 @@
 "
 This class is a highlighter to highlight XML document Text objects using XMLHighlights.
+
 "
 Class {
 	#name : #Gt4XMLDocumentHighlighter,
