@@ -1,5 +1,6 @@
 "
 This is a base class for storing the default highlight TextColors used by a highlighter. It gets the initial defaults from Shout text styling.
+
 "
 Class {
 	#name : #Gt4XMLHighlightDefaults,
