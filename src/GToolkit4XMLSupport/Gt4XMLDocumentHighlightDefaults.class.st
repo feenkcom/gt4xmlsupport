@@ -3,8 +3,8 @@ This class stores the default highlight TextColors used by the document highligh
 
 "
 Class {
-	#name : #Gt4XMLDocumentHighlightDefaults,
-	#superclass : #Gt4XMLHighlightDefaults,
+	#name : 'Gt4XMLDocumentHighlightDefaults',
+	#superclass : 'Gt4XMLHighlightDefaults',
 	#classInstVars : [
 		'defaultXMLDeclarationColor',
 		'defaultDoctypeDeclarationColor',
@@ -18,43 +18,43 @@ Class {
 		'defaultCommentColor',
 		'defaultCDataColor'
 	],
-	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
+	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultCDataColor [
 	^ defaultCDataColor
 		ifNil: [defaultCDataColor := self textColorForShoutProperty: #primitive]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultCDataColor: aTextColor [
 	defaultCDataColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultCommentColor [
 	^ defaultCommentColor
 		ifNil: [defaultCommentColor :=  self textColorForShoutProperty: #comment]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultCommentColor: aTextColor [
 	defaultCommentColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultDeclarationColor [
 	^ defaultDeclarationColor
 		ifNil: [defaultDeclarationColor := self textColorForShoutProperty: #super]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultDeclarationColor: aTextColor [
 	defaultDeclarationColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultDoctypeDeclarationColor [
 	^ defaultDoctypeDeclarationColor
 		ifNil: [
@@ -62,12 +62,12 @@ Gt4XMLDocumentHighlightDefaults class >> defaultDoctypeDeclarationColor [
 				self textColorForShoutProperty: #super]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultDoctypeDeclarationColor: aTextColor [
 	defaultDoctypeDeclarationColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultEntityReferenceColor [
 	^ defaultEntityReferenceColor
 		ifNil: [
@@ -75,52 +75,52 @@ Gt4XMLDocumentHighlightDefaults class >> defaultEntityReferenceColor [
 				self textColorForShoutProperty: #character]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultEntityReferenceColor: aTextColor [
 	defaultEntityReferenceColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultNameColor [
 	^ defaultNameColor
 		ifNil: [defaultNameColor := self textColorForShoutProperty: #instVar]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultNameColor: aTextColor [
 	defaultNameColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultPIColor [
 	^ defaultPIColor
 		ifNil: [defaultPIColor := self textColorForShoutProperty: #primitive]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultPIColor: aTextColor [
 	defaultPIColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultPrimaryMarkupColor: aTextColor [
 	self
 		defaultDeclarationColor: aTextColor;
 		defaultTagColor: aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultQuotedStringColor [
 	^ defaultQuotedStringColor
 		ifNil: [defaultQuotedStringColor := self textColorForShoutProperty: #string]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultQuotedStringColor: aTextColor [
 	defaultQuotedStringColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultQuotedStringNameColor [
 	^ defaultQuotedStringNameColor
 		ifNil: [
@@ -128,12 +128,12 @@ Gt4XMLDocumentHighlightDefaults class >> defaultQuotedStringNameColor [
 				self textColorForShoutProperty: #self]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultQuotedStringNameColor: aTextColor [
 	defaultQuotedStringNameColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultSecondaryMarkupColor: aTextColor [
 	self
 		defaultXMLDeclarationColor: aTextColor;
@@ -141,29 +141,29 @@ Gt4XMLDocumentHighlightDefaults class >> defaultSecondaryMarkupColor: aTextColor
 		defaultPIColor: aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultTagColor [
 	^ defaultTagColor
 		ifNil: [defaultTagColor := self textColorForShoutProperty: #instVar]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultTagColor: aTextColor [
 	defaultTagColor := aTextColor
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultXMLDeclarationColor [
 	^ defaultXMLDeclarationColor
 		ifNil: [defaultXMLDeclarationColor := self textColorForShoutProperty: #primitive]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLDocumentHighlightDefaults class >> defaultXMLDeclarationColor: aTextColor [
 	defaultXMLDeclarationColor := aTextColor
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 Gt4XMLDocumentHighlightDefaults class >> resetDefaults [
 	super resetDefaults.
 
@@ -180,57 +180,57 @@ Gt4XMLDocumentHighlightDefaults class >> resetDefaults [
 	defaultCDataColor := nil.
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> cdataColor [
 	^ self class defaultCDataColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> commentColor [
 	^ self class defaultCommentColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> declarationColor [
 	^ self class defaultDeclarationColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> doctypeDeclarationColor [
 	^ self class defaultDoctypeDeclarationColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> entityReferenceColor [
 	^ self class defaultEntityReferenceColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> nameColor [
 	^ self class defaultNameColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> piColor [
 	^ self class defaultPIColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> quotedStringColor [
 	^ self class defaultQuotedStringColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> quotedStringNameColor [
 	^ self class defaultQuotedStringNameColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> tagColor [
 	^ self class defaultTagColor
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLDocumentHighlightDefaults >> xmlDeclarationColor [
 	^ self class defaultXMLDeclarationColor
 ]

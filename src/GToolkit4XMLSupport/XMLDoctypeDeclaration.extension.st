@@ -1,21 +1,21 @@
-Extension { #name : #XMLDoctypeDeclaration }
+Extension { #name : 'XMLDoctypeDeclaration' }
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLDoctypeDeclaration >> gtSupportsXPathEvaluator [
 	^ false
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLDoctypeDeclaration >> removeFromParent [
 	self parent doctypeDeclaration: nil
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLDoctypeDeclaration >> supportsSourceEditing [
 	^ false
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLDoctypeDeclaration >> writeTreeViewLabelXMLOn: aWriter [
 	aWriter doctype
 		root: self root;

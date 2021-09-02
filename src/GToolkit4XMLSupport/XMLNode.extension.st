@@ -1,6 +1,6 @@
-Extension { #name : #XMLNode }
+Extension { #name : 'XMLNode' }
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> acceptEditedSource: aSourceTextOrString inContext: aGTInspector [
 	| newOuterXMLNode |
 
@@ -30,7 +30,7 @@ XMLNode >> acceptEditedSource: aSourceTextOrString inContext: aGTInspector [
 				selection: newOuterXMLNode].
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> addRemoveActionTo: aPresentation in: aComposite inContext: aGTInspector [
 	(self supportsRemoveAction not
 		or: [aGTInspector panes size <= 1
@@ -61,20 +61,20 @@ XMLNode >> addRemoveActionTo: aPresentation in: aComposite inContext: aGTInspect
 		entitled: 'Remove'.
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtDisplayText [
 	| aText |
 	aText := super gtDisplayText.
 	^ Gt4XMLStyler new style: aText.
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode class >> gtExampleNodeWithParent [
 	<gtExample>
 	^ self new parent: self new
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtItemsFor: aView [
 	<gtView>
 	self supportsTreeView
@@ -88,7 +88,7 @@ XMLNode >> gtItemsFor: aView [
 		expandUpTo: 2
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtParentsFor: aView [
 	<gtView>
 	^ aView list
@@ -98,7 +98,7 @@ XMLNode >> gtParentsFor: aView [
 		itemText: [ :each | each gtDisplayText ]
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtSourceIn: aView [
 	<gtView>
 	^ aView textEditor
@@ -114,18 +114,18 @@ XMLNode >> gtSourceIn: aView [
 						writer enablePrologPrettyPrinting]]]
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtSupportsXPathEvaluator [
 	^ true
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtTreeIn: aView [
 	self deprecated: 'please use gtItemsFor: instead'.
 	^ self gtItemsFor: aView
 ]
 
-{ #category : #'*GToolkit4XMLSupport' }
+{ #category : '*GToolkit4XMLSupport' }
 XMLNode >> gtXPathFor: aView [
 	<gtView>
 	self gtSupportsXPathEvaluator ifFalse: [^ aView empty].
@@ -140,7 +140,7 @@ XMLNode >> gtXPathFor: aView [
 			aButton phlow spawnObject: (self xpath: xpath) ]
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> promptForSourceSaveFileName [
 	^ (UITheme builder
 		fileSave: 'Save XML source to file'
@@ -154,12 +154,12 @@ XMLNode >> promptForSourceSaveFileName [
 			ifNotNil: [:reference | reference fullName]
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> removeFromParent [
 	self parent removeNode: self
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> setOuterXMLFromEditedSource: aString [
 	| oldParent oldPosition oldSize |
 
@@ -174,30 +174,30 @@ XMLNode >> setOuterXMLFromEditedSource: aString [
 		ifFalse: [oldParent].
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> supportsRemoveAction [
 	^ self hasParent
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> supportsSourceEditing [
 	^ self hasParent
 		and: [self parent isDocument not]
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> supportsTreeView [
 	"returns true if this node needs a tree view tab when inspected"
 	^ false
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> treeViewChildren [
 	"returns the subnodes of this node in a tree view"
 	^ #()
 ]
 
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
+{ #category : '*GToolkit4XMLSupport-Highlighting' }
 XMLNode >> writeTreeViewLabelXMLOn: aWriter [
 	self writeXMLOn: aWriter
 ]
