@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfGToolkit4XMLSupport }
+Package { #name : 'BaselineOfGToolkit4XMLSupport' }
