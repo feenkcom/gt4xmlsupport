@@ -3,34 +3,34 @@ This is a base class for storing the default highlight TextColors used by a high
 
 "
 Class {
-	#name : #Gt4XMLHighlightDefaults,
-	#superclass : #Object,
+	#name : 'Gt4XMLHighlightDefaults',
+	#superclass : 'Object',
 	#classInstVars : [
 		'defaultDefaultColor',
 		'uiTheme'
 	],
-	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
+	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLHighlightDefaults class >> defaultDefaultColor [
 	^ defaultDefaultColor
 		ifNil: [defaultDefaultColor := self textColorForShoutProperty: #default]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Gt4XMLHighlightDefaults class >> defaultDefaultColor: aTextColor [
 	defaultDefaultColor := aTextColor
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 Gt4XMLHighlightDefaults class >> initialize [
 	"self initialize"
 
 	self resetDefaults
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 Gt4XMLHighlightDefaults class >> new [
 	"if the theme was changed since last initialization, reset the defaults"
 	self uiTheme = Smalltalk ui theme
@@ -39,12 +39,12 @@ Gt4XMLHighlightDefaults class >> new [
 	^ super new.
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 Gt4XMLHighlightDefaults class >> resetDefaults [
 	defaultDefaultColor := nil
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 Gt4XMLHighlightDefaults class >> textColorForShoutProperty: aShoutProperty [
 	^ TextColor color:
 		(((SHTextStylerST80 new attributesFor: aShoutProperty)
@@ -52,12 +52,12 @@ Gt4XMLHighlightDefaults class >> textColorForShoutProperty: aShoutProperty [
 			ifNone: [^ nil]) color)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 Gt4XMLHighlightDefaults class >> uiTheme [
 	^ uiTheme ifNil: [uiTheme := Smalltalk ui theme]
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 Gt4XMLHighlightDefaults >> defaultColor [
 	^ self class defaultDefaultColor
 ]
