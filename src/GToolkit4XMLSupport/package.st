@@ -1,1 +1,1 @@
-Package { #name : 'GToolkit4XMLSupport' }
+Package { #name : #GToolkit4XMLSupport }

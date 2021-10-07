@@ -1,6 +1,6 @@
-Extension { #name : 'XMLNodeWithElements' }
+Extension { #name : #XMLNodeWithElements }
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements >> addTreeViewChildrenTo: anOrderedCollection [
 	self nodesDo: [:each |
 		(each isStringNode
@@ -9,13 +9,13 @@ XMLNodeWithElements >> addTreeViewChildrenTo: anOrderedCollection [
 			ifFalse: [anOrderedCollection addLast: each]]
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements class >> gtExampleXmlNode [
 	<gtExample>
 	^ XMLDocument gtExampleXmlNode nodes
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements >> spotterForAllElementsFor: aStep [
 	<spotterOrder: 40>
 	aStep listProcessor
@@ -26,7 +26,7 @@ XMLNodeWithElements >> spotterForAllElementsFor: aStep [
 		wantsToDisplayOnEmptyQuery: true
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements >> spotterForDirectElementsFor: aStep [
 	<spotterOrder: 40>
 	aStep listProcessor
@@ -37,7 +37,7 @@ XMLNodeWithElements >> spotterForDirectElementsFor: aStep [
 		wantsToDisplayOnEmptyQuery: true
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements >> supportsTreeView [
 	^ self hasChildren
 		and: [self nodes anySatisfy: [:each | each isStringNode not]]
