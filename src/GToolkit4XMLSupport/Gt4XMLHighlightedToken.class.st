@@ -3,8 +3,8 @@ This class stores a highlight TextColor and 1-based start/end highlight position
 
 "
 Class {
-	#name : 'Gt4XMLHighlightedToken',
-	#superclass : 'Object',
+	#name : #Gt4XMLHighlightedToken,
+	#superclass : #Object,
 	#instVars : [
 		'color',
 		'start',
@@ -13,7 +13,7 @@ Class {
 	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
-{ #category : 'highlighting' }
+{ #category : #highlighting }
 Gt4XMLHighlightedToken >> applyToText: aText [
 	| attributeStart attributeEnd |
 
@@ -29,32 +29,32 @@ Gt4XMLHighlightedToken >> applyToText: aText [
 				to: attributeEnd].
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> color [
 	^ color
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> color: aTextColor [
 	color := aTextColor
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> end [
 	^ end
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> end: anEndPosition [
 	end := anEndPosition
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> start [
 	^ start
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 Gt4XMLHighlightedToken >> start: aStartPosition [
 	start := aStartPosition
 ]

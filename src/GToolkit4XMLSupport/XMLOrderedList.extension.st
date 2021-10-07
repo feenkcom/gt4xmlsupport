@@ -1,6 +1,6 @@
-Extension { #name : 'XMLOrderedList' }
+Extension { #name : #XMLOrderedList }
 
-{ #category : '*GToolkit4XMLSupport' }
+{ #category : #'*GToolkit4XMLSupport' }
 XMLOrderedList >> gtTreeFor: aView [
 	<gtView>
 	^ aView tree

@@ -1,6 +1,6 @@
-Extension { #name : 'AbstractFileReference' }
+Extension { #name : #AbstractFileReference }
 
-{ #category : '*GToolkit4XMLSupport' }
+{ #category : #'*GToolkit4XMLSupport' }
 AbstractFileReference >> gtXmlFor: aView [
 	<gtView>
 	(self isFile and: [

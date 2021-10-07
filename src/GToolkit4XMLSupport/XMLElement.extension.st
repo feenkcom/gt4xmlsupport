@@ -1,6 +1,6 @@
-Extension { #name : 'XMLElement' }
+Extension { #name : #XMLElement }
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> formForImageEntity: imageEntity [
   | imageType parserClassName parserClass parser |
   imageType := imageEntity contentType sub.
@@ -10,7 +10,7 @@ XMLElement >> formForImageEntity: imageEntity [
     ^ parser nextImage
 ]
 
-{ #category : '*GToolkit4XMLSupport' }
+{ #category : #'*GToolkit4XMLSupport' }
 XMLElement >> gtAttributesFor: aView [
 	<gtView>
 	self hasAttributes
@@ -23,13 +23,13 @@ XMLElement >> gtAttributesFor: aView [
 		column: 'Value' text: #value weight: 2
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement class >> gtExampleXmlNode [
 	<gtExample>
 	^ XMLDocument gtExampleXmlNode firstElement
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> gtInspectorAttributesIn: aComposite inContext: aGTInspector [
 	<gtInspectorPresentationOrder: 3>
 	
@@ -41,7 +41,7 @@ XMLElement >> gtInspectorAttributesIn: aComposite inContext: aGTInspector [
 		column: 'Value' evaluated: #value
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> gtInspectorImageIn: composite inContext: aGTInspector [
 	<gtInspectorPresentationOrder: 40>
 	| client url |
@@ -63,7 +63,7 @@ XMLElement >> gtInspectorImageIn: composite inContext: aGTInspector [
 		when: [ (self isNamed: 'img') and: [ self includesAttribute: 'src' ] ]
 ]
 
-{ #category : '*GToolkit4XMLSupport' }
+{ #category : #'*GToolkit4XMLSupport' }
 XMLElement >> gtNamespaceNodesFor: aView [
 	<gtView>
 	^ aView columnedList
@@ -75,18 +75,18 @@ XMLElement >> gtNamespaceNodesFor: aView [
 		column: 'URI' text: #uri weight: 2
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> supportsRemoveAction [
 	^ self hasParent
 		and: [self parent isDocument not]
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> supportsSourceEditing [
 	^ self hasParent
 ]
 
-{ #category : '*GToolkit4XMLSupport-Highlighting' }
+{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> writeTreeViewLabelXMLOn: aWriter [
 	self supportsTreeView
 		ifTrue: [
