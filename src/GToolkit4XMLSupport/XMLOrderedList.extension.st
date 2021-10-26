@@ -1,6 +1,12 @@
 Extension { #name : #XMLOrderedList }
 
 { #category : #'*GToolkit4XMLSupport' }
+XMLOrderedList >> asBrItemsProvider [
+
+	^ BrListSequenceableCollectionItemsProvider forCollection: self
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
 XMLOrderedList >> gtTreeFor: aView [
 	<gtView>
 	^ aView tree
