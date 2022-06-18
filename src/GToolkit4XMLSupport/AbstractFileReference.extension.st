@@ -24,7 +24,7 @@ AbstractFileReference >> gtXmlFor: aView [
 				addChild: editor;
 				addChild: (BrButton new aptitude: BrGlamorousButtonWithIconAptitude; icon: BrGlamorousVectorIcons search; label: 'Search with XPath'; action: [ b phlow spawnObject: ((XMLDOMParser parse: self contents) xpath: editor editor text asString) ])];
 		stencil: [ | editorElement textEditor text |
-			textEditor := BrTextEditor new.
+			textEditor := BrTextEditorModel new.
 			textEditor styler: Gt4XMLStyler new.
 			editorElement := BrEditorElement new.
 			editorElement editor: textEditor.
