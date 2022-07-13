@@ -3,7 +3,7 @@ Extension { #name : #XMLOrderedList }
 { #category : #'*GToolkit4XMLSupport' }
 XMLOrderedList >> asBrItemsProvider [
 
-	^ BrListSequenceableCollectionItemsProvider forCollection: self
+	^ BrSequenceableCollectionItemsProvider forCollection: self
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
