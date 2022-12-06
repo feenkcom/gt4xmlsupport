@@ -16,28 +16,6 @@ XMLNodeWithElements class >> gtExampleXmlNode [
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
-XMLNodeWithElements >> spotterForAllElementsFor: aStep [
-	<spotterOrder: 40>
-	aStep listProcessor
-		title: 'All elements';
-		allCandidates: [self allElements];
-		itemName: #gtDisplayString;
-		filter: GtFilterSubstring;
-		wantsToDisplayOnEmptyQuery: true
-]
-
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
-XMLNodeWithElements >> spotterForDirectElementsFor: aStep [
-	<spotterOrder: 40>
-	aStep listProcessor
-		title: 'Direct elements';
-		allCandidates: [self elements];
-		itemName: #gtDisplayString;
-		filter: GtFilterSubstring;
-		wantsToDisplayOnEmptyQuery: true
-]
-
-{ #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLNodeWithElements >> supportsTreeView [
 	^ self hasChildren
 		and: [self nodes anySatisfy: [:each | each isStringNode not]]
