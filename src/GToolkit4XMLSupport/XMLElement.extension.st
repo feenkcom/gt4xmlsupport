@@ -29,6 +29,20 @@ XMLElement class >> gtExampleXmlNode [
 	^ XMLDocument gtExampleXmlNode firstElement
 ]
 
+{ #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtGroupedChildrenElementsFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Grouped children';
+		priority: 60;
+		items: [ (self elements groupedBy: #name) associations ];
+		column: 'Child name' text: #key;
+		column: 'List'
+			text: #value
+			weight: 3;
+		send: #value
+]
+
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
 XMLElement >> gtInspectorAttributesIn: aComposite inContext: aGTInspector [
 	<gtInspectorPresentationOrder: 3>
