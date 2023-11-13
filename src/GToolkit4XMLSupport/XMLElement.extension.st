@@ -40,7 +40,10 @@ XMLElement >> gtGroupedChildrenElementsFor: aView [
 		column: 'List'
 			text: #value
 			weight: 3;
-		send: #value
+		send: [ :anAssoc | 
+			anAssoc value size = 1
+				ifTrue: [ anAssoc value anyOne ]
+				ifFalse: [ anAssoc value ] ]
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
