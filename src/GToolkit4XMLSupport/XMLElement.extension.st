@@ -30,10 +30,29 @@ XMLElement class >> gtExampleXmlNode [
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtGroupedAllSuccessorsElementsFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Grouped successors';
+		tooltip: 'All element-children grouped by name';
+		priority: 61;
+		items: [ ((self // '*') groupedBy: #name) associations ];
+		column: 'Child name' text: #key;
+		column: 'List'
+			text: #value
+			weight: 3;
+		send: [ :anAssoc | 
+			anAssoc value size = 1
+				ifTrue: [ anAssoc value anyOne ]
+				ifFalse: [ anAssoc value ] ]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
 XMLElement >> gtGroupedChildrenElementsFor: aView [
 	<gtView>
 	^ aView columnedList
 		title: 'Grouped children';
+		tooltip: 'Direct cild-elements grouped by name';
 		priority: 60;
 		items: [ (self elements groupedBy: #name) associations ];
 		column: 'Child name' text: #key;
