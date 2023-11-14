@@ -30,10 +30,65 @@ XMLElement class >> gtExampleXmlNode [
 ]
 
 { #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtGroupedAllSuccessorsAttributeNamessFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'All children attributes';
+		tooltip: 'All element-children attributes grouped by name';
+		priority: 63;
+		items: [ ((self // '*') @ '*' groupedBy: #name) associations sorted: [ :a :b | a < b ] ];
+		column: 'Child name' text: #key;
+		column: 'List'
+			text: #value
+			weight: 3;
+		send: [ :anAssoc | 
+			anAssoc value size = 1
+				ifTrue: [ anAssoc value anyOne ]
+				ifFalse: [ anAssoc value ] ]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtGroupedAllSuccessorsElementsFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'All children names';
+		tooltip: 'All element-children grouped by name';
+		priority: 61;
+		items: [ ((self // '*') groupedBy: #name) associations ];
+		column: 'Child name' text: #key;
+		column: 'List'
+			text: #value
+			weight: 3;
+		send: [ :anAssoc | 
+			anAssoc value size = 1
+				ifTrue: [ anAssoc value anyOne ]
+				ifFalse: [ anAssoc value ] ]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
+XMLElement >> gtGroupedChildrenAttributeNamessFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Children attributes';
+		tooltip: 'Direct element-children attributes grouped by name';
+		priority: 62;
+		items: [ ((self / '*') @ '*' groupedBy: #name) associations sorted: [ :a :b | a < b ] ];
+		column: 'Child name' text: #key;
+		column: 'List'
+			text: #value
+			weight: 3;
+		send: [ :anAssoc | 
+			anAssoc value size = 1
+				ifTrue: [ anAssoc value anyOne ]
+				ifFalse: [ anAssoc value ] ]
+]
+
+{ #category : #'*GToolkit4XMLSupport' }
 XMLElement >> gtGroupedChildrenElementsFor: aView [
 	<gtView>
 	^ aView columnedList
-		title: 'Grouped children';
+		title: 'Children names';
+		tooltip: 'Direct child-elements grouped by name';
 		priority: 60;
 		items: [ (self elements groupedBy: #name) associations ];
 		column: 'Child name' text: #key;
