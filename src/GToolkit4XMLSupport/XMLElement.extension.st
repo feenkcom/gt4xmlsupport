@@ -33,7 +33,7 @@ XMLElement class >> gtExampleXmlNode [
 XMLElement >> gtGroupedAllSuccessorsAttributeNamessFor: aView [
 	<gtView>
 	^ aView columnedList
-		title: 'Successors attributes';
+		title: 'All children attributes';
 		tooltip: 'All element-children attributes grouped by name';
 		priority: 63;
 		items: [ ((self // '*') @ '*' groupedBy: #name) associations sorted: [ :a :b | a < b ] ];
@@ -51,7 +51,7 @@ XMLElement >> gtGroupedAllSuccessorsAttributeNamessFor: aView [
 XMLElement >> gtGroupedAllSuccessorsElementsFor: aView [
 	<gtView>
 	^ aView columnedList
-		title: 'Successor names';
+		title: 'All children names';
 		tooltip: 'All element-children grouped by name';
 		priority: 61;
 		items: [ ((self // '*') groupedBy: #name) associations ];
