@@ -1,10 +1,10 @@
 Class {
-	#name : 'BaselineOfGToolkit4XMLSupport',
-	#superclass : 'BaselineOf',
-	#category : 'BaselineOfGToolkit4XMLSupport'
+	#name : #BaselineOfGToolkit4XMLSupport,
+	#superclass : #BaselineOf,
+	#category : #BaselineOfGToolkit4XMLSupport
 }
 
-{ #category : 'baseline' }
+{ #category : #baseline }
 BaselineOfGToolkit4XMLSupport >> baseline: spec [
 	<baseline>
 	spec for: #'common' do: [
