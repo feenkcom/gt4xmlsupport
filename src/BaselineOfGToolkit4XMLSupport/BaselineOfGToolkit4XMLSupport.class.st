@@ -10,7 +10,7 @@ BaselineOfGToolkit4XMLSupport >> baseline: spec [
 	spec for: #'common' do: [
 		spec
 			baseline: 'XPathForGlamorousToolkit' with: [
-				spec repository: 'github://feenkcom/XML-XPath:v0.6.1/src' ].
+				spec repository: 'github://feenkcom/XML-XPath:v0.6.2/src' ].
 		spec
 			baseline: 'XMLWriterForGlamorousToolkit' with: [
 				spec repository: 'github://feenkcom/XML-XMLWriter:v0.6.1/src' ].
