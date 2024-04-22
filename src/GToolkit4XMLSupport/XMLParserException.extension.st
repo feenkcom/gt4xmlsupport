@@ -12,7 +12,7 @@ XMLParserException >> gtContextWithFileReference [
 { #category : #'*GToolkit4XMLSupport' }
 XMLParserException >> gtFileReferenceContentsFor: aView [
 	<gtView>
-	<gtExceptionDebuggingView>
+	<gtExceptionView>
 	self gtHasStack ifFalse: [ ^ aView empty ].
 	self gtContextWithFileReference ifNil: [ ^ aView empty ].
 
@@ -26,7 +26,7 @@ XMLParserException >> gtFileReferenceContentsFor: aView [
 { #category : #'*GToolkit4XMLSupport' }
 XMLParserException >> gtFileReferencePathFor: aView [
 	<gtView>
-	<gtExceptionDebuggingView>
+	<gtExceptionView>
 	self gtHasStack ifFalse: [ ^ aView empty ].
 	self gtContextWithFileReference ifNil: [ ^ aView empty ].
 
