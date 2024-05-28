@@ -1,1 +1,6 @@
-{	"repositories" : {		"github://feenkcom/XML-XPath/src" : "v0.6.2",		"github://feenkcom/XML-XMLWriter/src" : "v0.6.1"	}}
+{
+	"repositories" : {
+		"github://feenkcom/XML-XPath/src" : "v0.6.3",
+		"github://feenkcom/XML-XMLWriter/src" : "v0.6.2"
+	}
+}
