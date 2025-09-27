@@ -9,7 +9,7 @@ Class {
 		'isInEntityReference',
 		'isInAttlistDeclaration'
 	],
-	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
 { #category : #'tokenizing - dtd' }
