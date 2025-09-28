@@ -10,7 +10,7 @@ AbstractFileReference >> gtXmlFor: aView [
 	^ aView explicit
 		title: 'XML';
 		priority: 1;
-		actionButtonIcon: BrGlamorousIcons tree 
+		actionButtonIcon: BrGlamorousVectorIcons tree 
 			action: [ :aButton | aButton phlow spawnObject: (XMLDOMParser parse: self contents) ];
 		actionDropdownButtonIcon: nil 
 			label: 'XPath' 
