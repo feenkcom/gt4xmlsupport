@@ -26,7 +26,7 @@ Class {
 		'commentHighlight',
 		'highlights'
 	],
-	#category : 'GToolkit4XMLSupport'
+	#category : #GToolkit4XMLSupport
 }
 
 { #category : #'highlighting - positions' }

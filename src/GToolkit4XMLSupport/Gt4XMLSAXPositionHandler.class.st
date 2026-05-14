@@ -5,7 +5,7 @@ This class is a SAXHandler that can track the positions of tokens. Does not supp
 Class {
 	#name : #Gt4XMLSAXPositionHandler,
 	#superclass : #SAXHandler,
-	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
 { #category : #defaults }

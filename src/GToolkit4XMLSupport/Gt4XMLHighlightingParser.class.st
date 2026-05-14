@@ -5,7 +5,7 @@ Class {
 		'highlighter',
 		'encoding'
 	],
-	#category : 'GToolkit4XMLSupport'
+	#category : #GToolkit4XMLSupport
 }
 
 { #category : #converting }

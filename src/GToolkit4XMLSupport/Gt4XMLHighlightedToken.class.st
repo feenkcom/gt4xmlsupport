@@ -10,7 +10,7 @@ Class {
 		'start',
 		'end'
 	],
-	#category : 'GToolkit4XMLSupport-Highlighting-Highlighting'
+	#category : #'GToolkit4XMLSupport-Highlighting-Highlighting'
 }
 
 { #category : #highlighting }
