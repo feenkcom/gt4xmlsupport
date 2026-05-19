@@ -3,11 +3,12 @@ Extension { #name : #AbstractFileReference }
 { #category : #'*GToolkit4XMLSupport' }
 AbstractFileReference >> gtXmlFor: aView [
 	<gtView>
-	self size > 100000 ifTrue: [ ^ aView empty ].
-	(self isFile and: [
+	(self exists and: [ self size > 100000 ]) ifTrue: [ ^ aView empty ].
+	(self exists and: [ 
+		self isFile and: [
 		| xmlFileHandle |
 		xmlFileHandle := XMLFileSystemFileHandle fileReference: self.
-		xmlFileHandle isXMLDocumentFile ]) ifFalse: [ ^ aView empty ].
+		xmlFileHandle isXMLDocumentFile ] ]) ifFalse: [ ^ aView empty ].
 	^ aView explicit
 		title: 'XML';
 		priority: 1;
