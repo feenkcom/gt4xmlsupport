@@ -15,9 +15,7 @@ XMLDocument class >> gtExampleXmlNode [
 
 { #category : #'*GToolkit4XMLSupport' }
 XMLDocument >> namespaceNodes [
-	^ self firstElement
-		ifNotNil: #namespaceNodes
-		ifNil: [ #() ]
+	^ self firstElement ifNotNil: [ :v | v namespaceNodes ] ifNil: [ #() ]
 ]
 
 { #category : #'*GToolkit4XMLSupport-Highlighting' }
